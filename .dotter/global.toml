@@ -1,0 +1,23 @@
+# Read more here: https://github.com/SuperCuber/dotter/wiki/Setup-and-Configuration
+[helpers]
+
+[zsh.files]
+zshrc = "~/.zshrc"
+
+[bash.files]
+bashrc = "~/.bashrc"
+
+[tmux.files]
+tmux = "~/.tmux.conf"
+
+[nvim.files]
+vimrc = "~/.vimrc"
+
+[default]
+depends = []
+
+[default.files]
+"LICENSE.md" = ""
+"README.md" = ""
+
+[default.variables]
