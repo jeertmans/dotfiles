@@ -78,7 +78,6 @@ plugins=(
     tmux
     python
     rust
-    cargo
     virtualenvwrapper
 )
 
@@ -116,4 +115,31 @@ export PATH=$PATH:~/.local/bin
 
 alias vpni="openvpn3 session-start --config ~/client.ovpn"
 alias vpno="openvpn3 session-manage --config ~/client.ovpn -D"
+
+
+## Add NVIDIA CUDA to PATH and LD_LIBRARY_PATH ##
+case ":${PATH}:" in
+  *:"/usr/local/cuda-11.5/lib64":*)
+    ;;
+  *)
+  if [ -z "${PATH}" ] ; then
+    PATH=/usr/local/cuda-11.5/bin
+  else
+    PATH=/usr/local/cuda-11.5/bin:$PATH
+  fi
+esac
+
+case ":${LD_LIBRARY_PATH}:" in
+  *:"/usr/local/cuda-11.5/lib64":*)
+    ;;
+  *)
+  if [ -z "${LD_LIBRARY_PATH}" ] ; then
+    LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64
+  else
+    LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64:$LD_LIBRARY_PATH
+  fi
+esac
+
+export PATH LD_LIBRARY_PATH
+
 
