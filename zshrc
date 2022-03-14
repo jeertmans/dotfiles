@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jeertmans/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,6 +70,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+#
+PATH=$HOME/.local/bin:$PATH
+
 plugins=(
     git 
     zsh-syntax-highlighting
@@ -81,7 +84,10 @@ plugins=(
     virtualenvwrapper
 )
 
+ZSH_TMUX_AUTOSTART=true
+
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -109,34 +115,43 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
+alias python=python3
 
-source /home/jeertmans/.local/bin/virtualenvwrapper.sh
-export PATH=$PATH:~/.local/bin
+# autojump
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 alias vpni="openvpn3 session-start --config ~/client.ovpn"
 alias vpno="openvpn3 session-manage --config ~/client.ovpn -D"
 
+CUDA_VERSION="11.5"
 
 ## Add NVIDIA CUDA to PATH and LD_LIBRARY_PATH ##
 case ":${PATH}:" in
-  *:"/usr/local/cuda-11.5/lib64":*)
+  *:"/usr/local/cuda-$CUDA_VERSION/lib64":*)
     ;;
   *)
   if [ -z "${PATH}" ] ; then
-    PATH=/usr/local/cuda-11.5/bin
+    PATH=/usr/local/cuda-$CUDA_VERSION/bin
   else
-    PATH=/usr/local/cuda-11.5/bin:$PATH
+    PATH=/usr/local/cuda-$CUDA_VERSION/bin:$PATH
   fi
 esac
 
 case ":${LD_LIBRARY_PATH}:" in
-  *:"/usr/local/cuda-11.5/lib64":*)
+  *:"/usr/local/cuda-$CUDA_VERSION/lib64":*)
     ;;
   *)
   if [ -z "${LD_LIBRARY_PATH}" ] ; then
-    LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64
+    LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_VERSION/lib64
   else
-    LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64:$LD_LIBRARY_PATH
+    LD_LIBRARY_PATH=/usr/local/cuda-$CUDA_VERSION/lib64:$LD_LIBRARY_PATH
   fi
 esac
 
