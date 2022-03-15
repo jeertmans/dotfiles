@@ -11,6 +11,12 @@ set -g @continuum-restore 'on'
 # Enabling mouse scrolling
 set -g mouse on
 
+
+# Advice from nvim:checkhealth
+set-option -sg escape-time 10
+set-option -g focus-events on
+set-option -sa terminal-overrides ',screen-256color:RGB'
+
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'github_username/plugin_name#branch'

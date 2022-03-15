@@ -24,7 +24,8 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 "Plugin 'ycm-core/YouCompleteMe'
-Plugin 'codota/tabnine-vim'
+Plugin 'tabnine/YouCompleteMe'
+"Plugin 'codota/tabnine-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
@@ -34,7 +35,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'preservim/nerdcommenter'
 "Plugin 'sirver/ultisnips'
 Bundle 'ervandew/supertab'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 
 " make YCM compatible with UltiSnips (using supertab)
@@ -72,6 +73,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Add this for YCM to support virtualenv
 " let g:python_host_prog = '/bin/python'
