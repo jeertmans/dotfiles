@@ -22,21 +22,17 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-"Plugin 'ycm-core/YouCompleteMe'
 Plugin 'tabnine/YouCompleteMe'
-"Plugin 'codota/tabnine-vim'
-Plugin 'dense-analysis/ale'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'lervag/vimtex'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'preservim/nerdcommenter'
-"Plugin 'sirver/ultisnips'
-Bundle 'ervandew/supertab'
-"Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
+Plugin 'dense-analysis/ale' " Check syntax in Vim asynchronously and fix files
+Plugin 'altercation/vim-colors-solarized' " Color theme
+Plugin 'airblade/vim-gitgutter' " Shows git diff markers in the sign column
+Plugin 'editorconfig/editorconfig-vim' " EditorConfig plugin
+Plugin 'lervag/vimtex' " Filtetype and syntax for LaTeX files
+Plugin 'preservim/nerdcommenter' " Comment functions
+Plugin 'ervandew/supertab' " Use Tab for completions
+Plugin 'SirVer/ultisnips' " Vim snippets
+Plugin 'mg979/vim-visual-multi' " Multiple cursors
+Plugin 'euclio/vim-markdown-composer'
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
