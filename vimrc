@@ -18,16 +18,21 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'tpope/vim-fugitive'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
 Plugin 'tabnine/YouCompleteMe'
-Plugin 'dense-analysis/ale'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'lervag/vimtex'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'preservim/nerdcommenter'
+Plugin 'dense-analysis/ale' " Check syntax in Vim asynchronously and fix files
+Plugin 'altercation/vim-colors-solarized' " Color theme
+Plugin 'airblade/vim-gitgutter' " Shows git diff markers in the sign column
+Plugin 'editorconfig/editorconfig-vim' " EditorConfig plugin
+Plugin 'lervag/vimtex' " Filtetype and syntax for LaTeX files
+Plugin 'preservim/nerdcommenter' " Comment functions
+Plugin 'ervandew/supertab' " Use Tab for completions
+Plugin 'SirVer/ultisnips' " Vim snippets
+Plugin 'mg979/vim-visual-multi' " Multiple cursors
+Plugin 'euclio/vim-markdown-composer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
