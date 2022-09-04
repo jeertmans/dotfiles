@@ -18,14 +18,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'tpope/vim-fugitive'
-"Plugin 'ycm-core/YouCompleteMe'
 Plugin 'tabnine/YouCompleteMe'
-"Plugin 'codota/tabnine-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
@@ -33,29 +28,6 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'lervag/vimtex'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'preservim/nerdcommenter'
-"Plugin 'sirver/ultisnips'
-Bundle 'ervandew/supertab'
-"Bundle 'Valloric/YouCompleteMe'
-Bundle 'SirVer/ultisnips'
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" Plugin 'skanehira/preview-markdown.vim'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -90,7 +62,9 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/snippets']
+let g:ale_python_flake8_options = "--ignore=E501,F403,F405"
+
+"let g:UltiSnipsExpandTrigger = '<tab>'
+"let g:UltiSnipsJumpForwardTrigger = '<tab>'
+"let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+"let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/snippets']
