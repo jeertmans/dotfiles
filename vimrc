@@ -22,9 +22,11 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'neoclide/coc.nvim', {'pinned': 1}
 Plugin 'tabnine/YouCompleteMe'
 Plugin 'dense-analysis/ale' " Check syntax in Vim asynchronously and fix files
 Plugin 'altercation/vim-colors-solarized' " Color theme
+"Plugin 'sts10/vim-pink-moon'
 Plugin 'airblade/vim-gitgutter' " Shows git diff markers in the sign column
 Plugin 'editorconfig/editorconfig-vim' " EditorConfig plugin
 Plugin 'lervag/vimtex' " Filtetype and syntax for LaTeX files
@@ -33,6 +35,28 @@ Plugin 'ervandew/supertab' " Use Tab for completions
 Plugin 'SirVer/ultisnips' " Vim snippets
 Plugin 'mg979/vim-visual-multi' " Multiple cursors
 Plugin 'euclio/vim-markdown-composer'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'jose-elias-alvarez/null-ls.nvim'
+" Plugin 'fcsonline/null-ls.nvim', {'pinned': 1}
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Plugin 'skanehira/preview-markdown.vim'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,8 +92,3 @@ set conceallevel=1
 let g:tex_conceal='abdmg'
 
 let g:ale_python_flake8_options = "--ignore=E501,F403,F405"
-
-"let g:UltiSnipsExpandTrigger = '<tab>'
-"let g:UltiSnipsJumpForwardTrigger = '<tab>'
-"let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-"let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/snippets']
