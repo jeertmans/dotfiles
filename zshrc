@@ -117,6 +117,9 @@ source $ZSH/oh-my-zsh.sh
 alias vim=nvim
 alias python=python3
 
+
+fpath+=~/.ltrs
+
 # autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
@@ -130,7 +133,7 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 alias vpni="openvpn3 session-start --config ~/client.ovpn"
 alias vpno="openvpn3 session-manage --config ~/client.ovpn -D"
 
-CUDA_VERSION="11.5"
+CUDA_VERSION="11.6"
 
 ## Add NVIDIA CUDA to PATH and LD_LIBRARY_PATH ##
 case ":${PATH}:" in
@@ -157,4 +160,5 @@ esac
 
 export PATH LD_LIBRARY_PATH
 
-
+# https://bugs.launchpad.net/ubuntu/+source/python-pip/+bug/1926580
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
